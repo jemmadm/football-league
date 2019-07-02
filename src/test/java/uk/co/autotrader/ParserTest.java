@@ -3,10 +3,8 @@ package uk.co.autotrader;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -104,4 +102,5 @@ public class ParserTest {
 //	check goal difference calculations are correct
 //	print/return table sorted by goal difference, lowest to highest
 //	print/return team name with lowest goal difference
+
 }
