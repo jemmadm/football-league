@@ -21,7 +21,7 @@ public class ParserTest {
 	}
 
 	@Test
-	public void returnListOfLineDataWithNoSpaces() throws IOException{
+	public void returnListOfTableDataWithNoSpaces() throws IOException{
 		Parser parser = new Parser();
 		List<String> table = parser.readFootballTableFile("data/football.dat");
 
@@ -43,7 +43,7 @@ public class ParserTest {
 	}
 
 	@Test
-	public void shouldParseDataIntoTeamNameWithForAndAgainstResults() throws IOException {
+	public void dataIntoTeamNameWithForAndAgainstResults() throws IOException {
 		Parser parser = new Parser();
 
 		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
@@ -56,7 +56,7 @@ public class ParserTest {
 	}
 
 	@Test
-	public void shouldCalculateGoalDifferenceForTeam() throws IOException {
+	public void calculateGoalDifferenceForTeam() throws IOException {
 		Parser parser = new Parser();
 
 		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
@@ -69,7 +69,7 @@ public class ParserTest {
 	}
 
 	@Test
-	public void shouldGetAllTestDataFromFootballTable() throws IOException {
+	public void getTestDataFromFootballTable() throws IOException {
 		Parser parser = new Parser();
 
 		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
@@ -86,7 +86,7 @@ public class ParserTest {
 	}
 
 	@Test
-	public void shouldGetTeamWithTheSmallestGoalDifference() throws IOException {
+	public void getTeamWithTheSmallestGoalDifference() throws IOException {
 		Parser parser = new Parser();
 		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
 		List<TeamData> teamData = parser.getAllTeamDataFromTable(footballResults);

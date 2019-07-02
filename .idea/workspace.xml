@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f77219e3-3e03-4079-8887-2643dd039167" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/TeamData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uk/co/autotrader/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uk/co/autotrader/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/uk/co/autotrader/ParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/uk/co/autotrader/ParserTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/uk.co.autotrader.ParserTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/uk.co.autotrader.ParserTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/uk.co.autotrader.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/uk.co.autotrader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-uk.co.autotrader.ParserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-uk.co.autotrader.ParserTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/football.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/football.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/ParserTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="f77219e3-3e03-4079-8887-2643dd039167" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -65,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/ParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-840">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="390">
+              <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -351,7 +331,7 @@
       <updated>1561937986276</updated>
       <workItem from="1561937987760" duration="958000" />
       <workItem from="1561986464087" duration="69000" />
-      <workItem from="1561986548205" duration="11912000" />
+      <workItem from="1561986548205" duration="12055000" />
     </task>
     <task id="LOCAL-00001" summary="first tests added">
       <created>1561986662424</created>
@@ -388,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561993968673</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="all code and tests added">
+      <created>1562029198861</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562029198861</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -424,7 +411,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12939000" />
+    <option name="totallyTimeSpent" value="13082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -495,7 +482,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first tests added" />
     <MESSAGE value=".gitignore added" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore added" />
+    <MESSAGE value="all code and tests added" />
+    <option name="LAST_COMMIT_MESSAGE" value="all code and tests added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,8 +578,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/ParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="390">
+          <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
