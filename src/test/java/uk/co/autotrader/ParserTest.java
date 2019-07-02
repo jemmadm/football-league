@@ -1,42 +1,107 @@
 package uk.co.autotrader;
-import static org.junit.Assert.*;
 
-import java.io.IOException;
-
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-public class ParserTest {
-	@Test
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-	public void shouldReadFileCorrectly() throws IOException{
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class ParserTest {
+
+	@Test
+	public void shouldAddEachLineOfTableIntoList() throws IOException{
 		Parser parser = new Parser();
-		FootballResults footballResults = parser.parse("data/football.dat");
-		Assertions.assertThat("      Team            P     W    L   D    F      A     Pts\n" +
-				"    1. Arsenal         38    26   9   3    79  -  36    87\n" +
-				"    2. Liverpool       38    24   8   6    67  -  30    80\n" +
-				"    3. Manchester_U    38    24   5   9    87  -  45    77\n" +
-				"    4. Newcastle       38    21   8   9    74  -  52    71\n" +
-				"    5. Leeds           38    18  12   8    53  -  37    66\n" +
-				"    6. Chelsea         38    17  13   8    66  -  38    64\n" +
-				"    7. West_Ham        38    15   8  15    48  -  57    53\n" +
-				"    8. Aston_Villa     38    12  14  12    46  -  47    50\n" +
-				"    9. Tottenham       38    14   8  16    49  -  53    50\n" +
-				"   10. Blackburn       38    12  10  16    55  -  51    46\n" +
-				"   11. Southampton     38    12   9  17    46  -  54    45\n" +
-				"   12. Middlesbrough   38    12   9  17    35  -  47    45\n" +
-				"   13. Fulham          38    10  14  14    36  -  44    44\n" +
-				"   14. Charlton        38    10  14  14    38  -  49    44\n" +
-				"   15. Everton         38    11  10  17    45  -  57    43\n" +
-				"   16. Bolton          38     9  13  16    44  -  62    40\n" +
-				"   17. Sunderland      38    10  10  18    29  -  51    40\n" +
-				"   18. Ipswich         38     9   9  20    41  -  64    36\n" +
-				"   19. Derby           38     8   6  24    33  -  63    30\n" +
-				"   20. Leicester       38     5  13  20    30  -  64    28").isEqualTo(footballResults);
+		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
+		List<String> expected = Collections.singletonList("    1. Arsenal         38    26   9   3    79  -  36    87");
+		assertThat(footballResults).containsAnyElementsOf(expected);
 	}
-	public void shouldReadFootballResults() throws IOException {
+
+	@Test
+	public void returnListOfLineDataWithNoSpaces() throws IOException{
 		Parser parser = new Parser();
-		FootballResults footballResults = parser.parse("data/football.dat");
-		assertEquals(20, footballResults.numberOfResults());
+		List<String> table = parser.readFootballTableFile("data/football.dat");
+
+		List<String> expected = new ArrayList<>();
+		expected.add("1.");
+		expected.add("Arsenal");
+		expected.add("38");
+		expected.add("26");
+		expected.add("9");
+		expected.add("3");
+		expected.add("79");
+		expected.add("-");
+		expected.add("36");
+		expected.add("87");
+
+
+		assertThat(parser.getListOfLineDataWithNoSpaces(table.get(0))).isEqualTo(expected);
+
 	}
+
+	@Test
+	public void shouldParseDataIntoTeamNameWithForAndAgainstResults() throws IOException {
+		Parser parser = new Parser();
+
+		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
+		List<String> listOfLineDataWithNoSpaces = parser.getListOfLineDataWithNoSpaces(footballResults.get(0));
+
+		TeamData expected = new TeamData("Arsenal", "79", "36");
+
+		TeamData teamData = parser.parseListIntoTeamData(listOfLineDataWithNoSpaces);
+		assertThat(teamData).isEqualTo(expected);
+	}
+
+	@Test
+	public void shouldCalculateGoalDifferenceForTeam() throws IOException {
+		Parser parser = new Parser();
+
+		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
+		List<String> listOfLineDataWithNoSpaces = parser.getListOfLineDataWithNoSpaces(footballResults.get(0));
+
+		int expected = Math.abs(79 - 36);
+
+		TeamData teamData = parser.parseListIntoTeamData(listOfLineDataWithNoSpaces);
+		assertThat(teamData.getGoalDifference()).isEqualTo(expected);
+	}
+
+	@Test
+	public void shouldGetAllTestDataFromFootballTable() throws IOException {
+		Parser parser = new Parser();
+
+		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
+		List<TeamData> actual = parser.getAllTeamDataFromTable(footballResults);
+
+		TeamData arsenal = new TeamData("Arsenal", "79", "36");
+		TeamData liverpool = new TeamData("Liverpool", "67", "30");
+		TeamData manchesterUnited = new TeamData("Manchester_U", "87", "45");
+
+		List<TeamData> expected = Arrays.asList(arsenal, liverpool, manchesterUnited);
+
+		assertThat(actual).containsAnyElementsOf(expected);
+
+	}
+
+	@Test
+	public void shouldGetTeamWithTheSmallestGoalDifference() throws IOException {
+		Parser parser = new Parser();
+		List<String> footballResults = parser.readFootballTableFile("data/football.dat");
+		List<TeamData> teamData = parser.getAllTeamDataFromTable(footballResults);
+
+		String actual = parser.getTeamWithSmallestGoalDifference(teamData);
+
+		String expected = "Aston_Villa";
+
+		assertThat(actual).isEqualTo(expected);
+	}
+
+
+//	print/return table with team names column without numbers and columns we want (team name, gf, ga)
+//	print/return table with new goal difference field
+//	check goal difference calculations are correct
+//	print/return table sorted by goal difference, lowest to highest
+//	print/return team name with lowest goal difference
 }
