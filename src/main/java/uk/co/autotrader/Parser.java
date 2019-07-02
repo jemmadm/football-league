@@ -34,10 +34,10 @@ public class Parser {
     }
 
     public List<String> getListOfLineDataWithNoSpaces(String tableLine) {
-        String[] splitTableLine = tableLine.split(" ");
+        String[] splitTableIntoLines = tableLine.split(" ");
         List<String> tableWithSpacesRemoved = new ArrayList<>();
 
-        for (String index:splitTableLine) {
+        for (String index:splitTableIntoLines) {
             if(!index.isEmpty()){
                 tableWithSpacesRemoved.add(index);
             }
